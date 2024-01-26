@@ -1,4 +1,5 @@
 import pandas as pd
+import streamlit as st
 import matplotlib.pyplot as plt
 from sklearn.model_selection import train_test_split
 from sklearn.linear_model import LinearRegression
@@ -51,8 +52,15 @@ print(average_sales_per_month)
 print("\nRata-rata Penjualan Per Minggu:")
 print(average_sales_per_week)
 
+
+
+
 # Visualisasikan data
-plt.figure(figsize=(12, 6))
+st.title('Data Prediksi')
+fig = plt.figure(figsize=(12, 6))
+st.line_chart(weekly_sales)
+st.line_chart(monthly_sales)
+st.line_chart(yearly_sales)
 plt.plot(weekly_sales, label='Weekly Sales')
 plt.plot(monthly_sales, label='Monthly Sales')
 plt.plot(yearly_sales, label='Yearly Sales')
